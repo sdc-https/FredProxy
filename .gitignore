@@ -27,3 +27,4 @@ dist/
 #Keys
 *.pem
 newrelic.js
+.env

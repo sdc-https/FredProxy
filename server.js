@@ -6,8 +6,10 @@ const path = require('path');
 const morgan = require('morgan');
 const createProxyMiddleware = require('http-proxy-middleware');
 
-const PORT = 3000;
-const API_PRODUCT_INFORMATION_URL = 'http://localhost:3001';
+const host = process.env.HOST || 'localhost';
+const port = process.env.PROXY_PORT || 3000;
+const informationPort = process.env.INFORMATION_PORT || 3001;
+const API_PRODUCT_INFORMATION_URL = `http://${host}:${informationPort}`;
 
 app.use(morgan('tiny'));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -34,6 +36,6 @@ app.use('/Information', createProxyMiddleware({
 
 
 
-app.listen(PORT, () => {
-  console.log(`Proxy server now listening at http://localhost:${PORT}`);
+app.listen(port, () => {
+  console.log(`Proxy server now listening at http://${host}:${port}`);
 });
