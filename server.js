@@ -3,7 +3,7 @@ const dotenv = require('dotenv').config();
 const express = require('express');
 const app = express();
 const path = require('path');
-const morgan = require('morgan');
+// const morgan = require('morgan');
 const createProxyMiddleware = require('http-proxy-middleware');
 
 const port = 3000;
@@ -14,7 +14,7 @@ const galleryURL = `http://${process.env.GALLERY_HOST}:3003`
 const reviewsURL = `http://${process.env.REVIEWS_HOST}:3004`
 
 
-app.use(morgan('tiny'));
+// app.use(morgan('tiny'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use((req, res, next) => {
