@@ -16,7 +16,7 @@ const sampleDataForOneProduct = {
   numberOfDisks: 88
 };
 
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'http://52.53.150.118:3000';
 
 export let options = {
   scenarios: {
@@ -32,12 +32,12 @@ export let options = {
 };
 
 export default () => {
-  // const min = 9000000;
-  // const max = 10000000;
-  // let id = Math.floor(Math.random() * (max - min + 1) + min);
-  // http.get(`${BASE_URL}/Information/${id}`);
-  // sleep(1);
-
-  http.post(`${BASE_URL}/Information`, JSON.stringify(sampleDataForOneProduct), { headers: {'Content-Type': 'application/json' } });
+  const min = 9000000;
+  const max = 10000000;
+  let id = Math.floor(Math.random() * (max - min + 1) + min);
+  http.get(`${BASE_URL}/Information/${id}`);
   sleep(1);
+
+  // http.post(`${BASE_URL}/Information`, JSON.stringify(sampleDataForOneProduct), { headers: {'Content-Type': 'application/json' } });
+  // sleep(1);
 };
