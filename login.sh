@@ -1,1 +1,0 @@
-ssh -i "/Users/jordanacevedo/FEC/Jordan-Proxy/jordan-proxy.pem" ec2-user@ec2-3-20-237-143.us-east-2.compute.amazonaws.com
